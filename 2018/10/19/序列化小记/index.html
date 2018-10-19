@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#序列化小记# ##序列化与反序列化##将对象转换为字节序列的过程称为对象的序列化；反之字节序列恢复为对象的过程称之为反序列化。 ##序列化主要有两种用途##  把对象的字节序列永久地保存到硬盘上，如保存到在文件中或数据库中； 在网络上传送对象的字节序列，传给另一个模块或系统；  ##序列化的方法##  java原生的序列化Java原生序列化方法即通过Java原生流(InputStream和Out">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/10/19/序列化小记/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#序列化小记# ##序列化与反序列化##将对象转换为字节序列的过程称为对象的序列化；反之字节序列恢复为对象的过程称之为反序列化。 ##序列化主要有两种用途##  把对象的字节序列永久地保存到硬盘上，如保存到在文件中或数据库中； 在网络上传送对象的字节序列，传给另一个模块或系统；  ##序列化的方法##  java原生的序列化Java原生序列化方法即通过Java原生流(InputStream和Out">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-18T09:15:19.598Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="#序列化小记# ##序列化与反序列化##将对象转换为字节序列的过程称为对象的序列化；反之字节序列恢复为对象的过程称之为反序列化。 ##序列化主要有两种用途##  把对象的字节序列永久地保存到硬盘上，如保存到在文件中或数据库中； 在网络上传送对象的字节序列，传给另一个模块或系统；  ##序列化的方法##  java原生的序列化Java原生序列化方法即通过Java原生流(InputStream和Out">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-序列化小记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/19/序列化小记/" class="article-date">
+  <time datetime="2018-10-19T00:52:37.248Z" itemprop="datePublished">2018-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#序列化小记#</p>
+<p>##序列化与反序列化##<br>将对象转换为字节序列的过程称为对象的序列化；反之字节序列恢复为对象的过程称之为反序列化。</p>
+<p>##序列化主要有两种用途##</p>
+<ol>
+<li>把对象的字节序列永久地保存到硬盘上，如保存到在文件中或数据库中；</li>
+<li>在网络上传送对象的字节序列，传给另一个模块或系统；</li>
+</ol>
+<p>##序列化的方法##</p>
+<ol>
+<li>java原生的序列化<br>Java原生序列化方法即通过Java原生流(InputStream和OutputStream之间的转化)的方式进行转化。需要注意的是JavaBean实体类必须实现Serializable接口，否则无法序列化。<br>优点：不需要引入第三方包<br>缺点：效率比较低</li>
+<li>json序列化<br>Json序列化一般会使用jackson包，通过ObjectMapper类来进行一些操作，比如将对象转化为byte数组或者将json串转化为对象。现在的大多数公司都将json作为服务器端返回的数据格式。比如调用一个服务器接口，通常的请求为xxx.json?a=xxx&amp;b=xxx的形式<br>优点：直观，能和js配对使用<br>缺点：效率低</li>
+<li>xml序列化<br>XML 序列化只将对象的公共字段和属性值序列化为 XML 流。  XML 序列化不包括类型信息，不能转换方法、索引器、私有字段或只读属性（只读集合除外。 例如，如果 Library 命名空间中存在 Man 对象，则不能保证将它反序列化为同一类型的对象。<br>优点：直观、不受环境限制，发送端时java ,接收端可以时任何js,python<br>缺点：标签太多，效率低</li>
+<li>FastJson序列化<br>fastjson 是由阿里巴巴开发的一个性能很好的Java 语言实现的 Json解析器和生成器。<br>优点：速度快；能强大，完全支持java bean、集合、Map、日期、Enum，支持范型和自省。<br>缺点：使用时候需引入FastJson第三方jar包</li>
+<li>ProtoBuff序列化<br>Protostuff是基于Google protobuff技术的Java版本，直接使用原生的protobuff是需要数据结构的预编译过程，需要编写.proto格式的配置文件，再通过protobuf提供的工具翻译成目标语言代码，而Protostuff动态支持了protobuff的预编译的过程。<br>优点：跨语言；数据压缩率大<br>缺点：压缩后数据二进制的方式存储，无法直接读取编辑；需要自己写.proto文件，通过编译器将其转换为java文件（百度做过升级，<br>通过对JavaBean中的字段进行注解）</li>
+</ol>
+<p>##总结##<br>  根据序列化的性能、用途等条件选择合适的序列化方式；如偏向于网络传输的可选择选择压缩率较高的方式，若是序列化是为了持久化的可选择xml/json模式持久化后的数据比较直观。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/19/序列化小记/" data-id="cjnfdypin0000soqx99lrmcrc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/19/贷记业务与借记业务/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/03/Python学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/10/19/贷记业务与借记业务/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/19/序列化小记/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/03/Python学习/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/03/我的第一篇文章/">我的第一篇文章</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

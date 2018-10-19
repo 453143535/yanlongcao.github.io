@@ -62,6 +62,85 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-贷记业务与借记业务" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/19/贷记业务与借记业务/" class="article-date">
+  <time datetime="2018-10-19T00:52:37.260Z" itemprop="datePublished">2018-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#贷记业务与借记业务#<br>贷记业务：</p>
+<p>1.贷记业务要从银行来理解，贷记业务就是由本行客户发起的，本行进行发起操作的，减少本银行资产（存出存款）的业务；</p>
+<p>2.贷记业务包括：</p>
+<p>① 一种是客户将自己的现金或存款划给对方客户；</p>
+<p>② 另一种是客户从银行取得了借款。</p>
+<p>这两种情况要贷记银行的存出存款账，因此银行称为贷记业务。</p>
+<p>借记业务：</p>
+<p>1.借记业务就是由本行客户发起的，本行进行发起操作的，增加本银行资产（存出存款）的业务；</p>
+<p>2.借记业务包括：</p>
+<p>① 一是客户将资金存银行备用；</p>
+<p>② 二是替客户收账。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/19/贷记业务与借记业务/" data-id="cjnfdypjl0001soqxivgqmqbk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-序列化小记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/19/序列化小记/" class="article-date">
+  <time datetime="2018-10-19T00:52:37.248Z" itemprop="datePublished">2018-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#序列化小记#</p>
+<p>##序列化与反序列化##<br>将对象转换为字节序列的过程称为对象的序列化；反之字节序列恢复为对象的过程称之为反序列化。</p>
+<p>##序列化主要有两种用途##</p>
+<ol>
+<li>把对象的字节序列永久地保存到硬盘上，如保存到在文件中或数据库中；</li>
+<li>在网络上传送对象的字节序列，传给另一个模块或系统；</li>
+</ol>
+<p>##序列化的方法##</p>
+<ol>
+<li>java原生的序列化<br>Java原生序列化方法即通过Java原生流(InputStream和OutputStream之间的转化)的方式进行转化。需要注意的是JavaBean实体类必须实现Serializable接口，否则无法序列化。<br>优点：不需要引入第三方包<br>缺点：效率比较低</li>
+<li>json序列化<br>Json序列化一般会使用jackson包，通过ObjectMapper类来进行一些操作，比如将对象转化为byte数组或者将json串转化为对象。现在的大多数公司都将json作为服务器端返回的数据格式。比如调用一个服务器接口，通常的请求为xxx.json?a=xxx&amp;b=xxx的形式<br>优点：直观，能和js配对使用<br>缺点：效率低</li>
+<li>xml序列化<br>XML 序列化只将对象的公共字段和属性值序列化为 XML 流。  XML 序列化不包括类型信息，不能转换方法、索引器、私有字段或只读属性（只读集合除外。 例如，如果 Library 命名空间中存在 Man 对象，则不能保证将它反序列化为同一类型的对象。<br>优点：直观、不受环境限制，发送端时java ,接收端可以时任何js,python<br>缺点：标签太多，效率低</li>
+<li>FastJson序列化<br>fastjson 是由阿里巴巴开发的一个性能很好的Java 语言实现的 Json解析器和生成器。<br>优点：速度快；能强大，完全支持java bean、集合、Map、日期、Enum，支持范型和自省。<br>缺点：使用时候需引入FastJson第三方jar包</li>
+<li>ProtoBuff序列化<br>Protostuff是基于Google protobuff技术的Java版本，直接使用原生的protobuff是需要数据结构的预编译过程，需要编写.proto格式的配置文件，再通过protobuf提供的工具翻译成目标语言代码，而Protostuff动态支持了protobuff的预编译的过程。<br>优点：跨语言；数据压缩率大<br>缺点：压缩后数据二进制的方式存储，无法直接读取编辑；需要自己写.proto文件，通过编译器将其转换为java文件（百度做过升级，<br>通过对JavaBean中的字段进行注解）</li>
+</ol>
+<p>##总结##<br>  根据序列化的性能、用途等条件选择合适的序列化方式；如偏向于网络传输的可选择选择压缩率较高的方式，若是序列化是为了持久化的可选择xml/json模式持久化后的数据比较直观。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/19/序列化小记/" data-id="cjnfdypin0000soqx99lrmcrc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python学习" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/03/Python学习/" class="article-date">
@@ -250,7 +329,7 @@ Python的函数支持递归、默认参数值、可变参数，但不支持函�
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
     </div>
   </div>
 
@@ -261,6 +340,14 @@ Python的函数支持递归、默认参数值、可变参数，但不支持函�
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/10/19/贷记业务与借记业务/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/19/序列化小记/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/06/03/Python学习/">(no title)</a>
